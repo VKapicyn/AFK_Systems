@@ -4,7 +4,7 @@ session_start();
     if (isset($_SESSION['history'])) {
         foreach ($_SESSION['history'] as $row){
             $url=explode("/",$row);
-            echo '<a href="'.$row.'">'.(Model_Page::get_title_by_id($url[3])).'</a><br>';
+            echo '<li><a href="'.$row.'">'.(Model_Page::get_title_by_id($url[3])).'</a><li>';
         }
     }
     else

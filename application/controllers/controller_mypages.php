@@ -54,7 +54,7 @@ class Controller_Mypages extends Controller
     function action_delete(){
         $get_cook=array();
         setcookie('bookmarks', serialize($get_cook), time() + 3600, '/');
-        header("Location:/mypages");
+        header("Location:".$_SERVER['HTTP_REFERER']);
     }
 	
 	function action_index(){
@@ -63,6 +63,6 @@ class Controller_Mypages extends Controller
             $content = unserialize($_COOKIE['bookmarks']);
         }
         
-		$this->view->generate('mypages_view.php', 'template_view.php', $content);
+		//$this->view->generate('mypages_view.php', 'template_view.php', $content);
 	}
 }

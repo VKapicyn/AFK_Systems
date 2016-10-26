@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-        <?php
+        <!--?php
             if(!empty($title)){
                  echo '<title>'.$title.'</title>';
             }
@@ -22,8 +22,8 @@
     
     
     
-	<body>
-        <div id="header">
+	<body-->
+        <div>
             <!-- Подключаем шапку -->
             <?php
             
@@ -38,34 +38,17 @@
         
         
         
-        <!--Меню на время тестирования -->
-        <?php 
-            if(Model::get_lang()==true) 
-                echo '<a href="/">Главная</a><br>
-                      <a href="/mypages">Закладки</a><br>'; 
-            else 
-                echo '<a href="/">General</a><br>
-                      <a href="/mypages">Bookmarks</a><br>'; 
-            $mass=Model::get_pages();
-            if(!empty($mass)){
-	             foreach($mass as $row){
-                 echo '<a href="/page/id/'.$row[1].'">'.$row[0].'</a><br>';
-	           }
-            }
-        ?>
-        <hr>
-        <!--Меню на время тестирования -->
+        <!-- Подключаем контент -->  
+     <?php include 'application/views/'.$content_view; ?>
         
         
-        
-        
-        <div class="content">
-        <!-- Подключаем контент -->    
-        <?php include 'application/views/'.$content_view; ?>
-            
-        </div>
+    
 
-		<div id="footer">
+       
+            
+            
+            
+            
             <!-- Подключаем футер -->
             <?php
             
@@ -75,6 +58,3 @@
                 include 'application/templates/footer_en.php';
             
             ?>
-		</div>
-	</body>
-</html>

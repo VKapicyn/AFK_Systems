@@ -12,7 +12,7 @@ class Controller_search extends Controller
             $_words = $_POST['search'];
         else
             $_words = '';
-        $title = 'Поиск'.$_words;
+        $title = 'Поиск '.$_words;
         $content = Model_Search::search($_words);
         
         $this->view->generate('search_view.php', 'template_view.php', $content, $title);

@@ -1,5 +1,4 @@
 <?php
-
 class Model_Page extends Model
 {       
     public static function get_content_by_id($_id){
@@ -35,7 +34,6 @@ class Model_Page extends Model
         {
             Route::ErrorPage404();
         }
-
         return $array[0];
     }
     
@@ -72,7 +70,6 @@ class Model_Page extends Model
         {
             Route::ErrorPage404();
         }
-
         return $array[0];
     }
 }
