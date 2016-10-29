@@ -27,7 +27,6 @@ body {
 
 
 /* Variables */
-// @bgColor: #e6f0fa;
 @bgColor: #fff;
 @blueBgColor: #005587;
 @white: #fff;
@@ -38,7 +37,9 @@ body {
 @red: #d2232a;
 @green: #00703a;
 @blue: #005587;
+@light-blue: #19b2ec;
 @gray: #777;
+@honorsBlue: #5b94cd;
 
 
 
@@ -312,6 +313,10 @@ h3 {
   color: @blue;
 }
 
+.light-blue{
+  color: @light-blue;
+}
+
 .blue-headers {
   h3 {
     color: @blue;
@@ -407,64 +412,62 @@ article {
   } 
 
 
-/* business-model p 28 */
-.bm-container {
-  overflow: hidden;
-  width: 600px;
-}
-.business-model {
-  white-space: nowrap;
-  background-image: url(/img/1.1/bg-rect.png);
-  background-repeat: no-repeat;
+/* business-model p 28 Бизнес-модель */
+// .bm-container {
+//   overflow: hidden;
+//   width: 600px;
+// }
+// .business-model {
+//   white-space: nowrap;
+//   background-image: url(/img/1.1/bg-rect.png);
+//   background-repeat: no-repeat;
   
-  .space {
-  margin-top: 20px;
-}
+//   .space {
+//   margin-top: 20px;
+// }
 
-  .rect {
-    display:inline-block;
-    margin: 10px;   
-    width: 200px;
-    height: 75px;
-    padding: 10px;
-    position: relative; 
-    // word-wrap: break-word;
-    text-overflow: clip;
+//   .rect {
+//     display:inline-block;
+//     margin: 10px;   
+//     width: 200px;
+//     height: 75px;
+//     padding: 10px;
+//     position: relative; 
+//     text-overflow: clip;
 
-    p {
-      color: @white;
-      text-transform: uppercase;
-      // padding-top: 20px;
-      text-align: center;
-      // word-wrap: break-word;
-      text-overflow: clip;
-     }
-} /* /rect */ 
+//     p {
+//       color: @white;
+//       text-transform: uppercase;
+//       text-align: center;
+//       text-overflow: clip;
+//      }
+// } /* /rect */ 
 
-    /* фон прямоугольников */
-    .orange-bg { background-color: @orange; }
-    .blue-bg { background-color: @blue; }
-    .red-bg { background-color: @red; }
-    .green-bg { background-color: @green; }
-    /* смена цвета фона при наведении */
-    .orange-bg:hover { background-color: lighten(@orange, 10%); }
-    .blue-bg:hover { background-color: lighten(@blue, 10%); }
-    .green-bg:hover { background-color: lighten(@green, 10%); }
-    .red-bg:hover { background-color: lighten(@red, 10%); }    
+//     /* фон прямоугольников */
+//     .orange-bg { background-color: @orange; }
+//     .blue-bg { background-color: @blue; }
+//     .red-bg { background-color: @red; }
+//     .green-bg { background-color: @green; }
+//     /* смена цвета фона при наведении */
+//     .orange-bg:hover { background-color: lighten(@orange, 10%); }
+//     .blue-bg:hover { background-color: lighten(@blue, 10%); }
+//     .green-bg:hover { background-color: lighten(@green, 10%); }
+//     .red-bg:hover { background-color: lighten(@red, 10%); }    
 
-    /* всплывающая подсказка */
-    .rect:hover::after { 
-    content: attr(data-title); 
-    position: absolute; 
-    left: 40%; top: 30%; /* Положение подсказки */
-    z-index: 1; 
-    background: darken(@bgColor, 10%); 
-    font-size: 11px; 
-    padding: 5px 10px; 
-    border: 1px solid #ccc; 
-    cursor: pointer;
-    }
- } /* /business-model*/  
+//     /* всплывающая подсказка */
+//     .rect:hover::after { 
+//     content: attr(data-title); 
+//     position: absolute; 
+//     left: 40%; top: 30%; /* Положение подсказки */
+//     z-index: 1; 
+//     background: darken(@bgColor, 10%); 
+//     font-size: 11px; 
+//     padding: 5px 10px; 
+//     border: 1px solid #ccc; 
+//     cursor: pointer;
+//     }
+//  } 
+ /* /business-model*/  
  
  .number-and-icon { //1.2 p.38
   span {
@@ -569,6 +572,10 @@ article {
     font-weight: bold;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
 } /* /table  */
 
 
@@ -595,9 +602,239 @@ table {
       margin-right: 10px;
     }
 }
-
-
 /* /Интерактивная аналитика */
+
+
+/* Награды и достижения */
+.honors_slider {
+    .item {
+      min-height: 600px;
+      padding-bottom: 20px;
+    } 
+
+    img { 
+      width: 200px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 10px;
+      margin: 0 10px;
+      word-break: break-all;
+    }
+      li {
+              font-size: 10px;
+       }
+
+    .blueBg {
+      background: @honorsBlue;
+      
+        h3, p {
+          color: @white;
+        }
+    }
+    .orangeBg {
+      background: @orange;
+      
+        h3, p {
+          color: @blue;
+        }
+    }    
+    .greenBg {
+      background: @green;
+      
+        h3, p {
+          color: @white;
+        }
+    }    
+    .redBg {
+      background: @red;
+      
+        h3, p {
+          color: @white;
+        }
+    }
+
+    .honor {
+      h3 {
+        margin: 0 10px;
+      }
+      img {
+        text-align: center;
+      }
+    }
+
+    /* Container */
+    .container-fluid {
+        max-width: 960px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Thumbnail Box */
+    .caption {
+        height: 100px;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        
+        .span4, .caption .span8 {
+          padding: 0px 20px;
+        }
+
+        .span4 {
+        border-right: 1px dotted #CCCCCC;
+    }
+
+         h3 {
+            line-height: 2rem;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            text-align: center;
+            }
+
+         p {
+            font-size: 1rem;
+            line-height: 1.6rem;
+            text-align: center;
+           }
+
+    }
+            
+    .carousel-control {
+        // top: 33%;
+    }
+}/* /.honors_slider */
+/* /Награды и достижения */
+
+
+/* Главная страница */
+
+.mainpage {
+   
+    margin: 0 auto;
+    background: url(/img/mainpage/background.png) no-repeat top center;
+    background-size: cover;
+    background-position: center center;
+    
+    position: relative;
+    
+    main {
+      height: 100%;
+      .left-text {
+        margin-top: 120px;
+        font-size: 30px;
+        color: @gray;
+        
+        span {
+          font-size: 56px;
+          color: @blue;
+        }
+      }
+
+      .numbers {
+        margin-top: 120px;
+        margin-left: 10px;
+        .number {
+          padding-top: 10px;
+          span {
+            font-size: 24px;
+          }
+          img {
+            width: 60px;
+            float: left;
+            padding-right: 10px;
+          }
+        }
+      }
+
+      .mainpage-buttons {
+        text-transform: uppercase;
+        margin-top: 50px;
+        // width: 70px;
+        a {
+          margin-right: 20px;
+        }
+        
+        // margin: 10px;
+        .btn {
+          padding: 8px;
+          margin-top: 10px;
+        }
+
+        .btn-primary {
+          color: @white;
+          background-color: @blue;
+          border-color: @blue;
+          width: 130px;
+        }
+        .btn-primary:hover {
+          background-color: lighten(@blue, 10%);
+        }
+        
+      } 
+    }
+}
+/* /Главная страница */
+
+/* Ключевые события */
+    .cd-horizontal-timeline .events-content {
+      position: relative;
+    }
+    .cd-horizontal-timeline .events-content li {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      left: 0;
+      top: 0;
+      transform: translateX(-100%);
+      opacity: 0;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in-out;
+    }
+    .cd-horizontal-timeline .events-content li.selected {
+      /* visible event content */
+      position: relative;
+      z-index: 2;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .cd-horizontal-timeline .events-content li.enter-right, 
+    .cd-horizontal-timeline .events-content li.leave-right {
+      animation-name: cd-enter-right;
+    }
+    .cd-horizontal-timeline .events-content li.enter-left, 
+    .cd-horizontal-timeline .events-content li.leave-left {
+      animation-name: cd-enter-left;
+    }
+    .cd-horizontal-timeline .events-content li.leave-right, 
+    .cd-horizontal-timeline .events-content li.leave-left {
+      animation-direction: reverse;
+    }
+    @keyframes cd-enter-right {
+      0% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
+    @keyframes cd-enter-left {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
+/* /Ключевые события */
+
 /* /Спецстраницы */
 
 

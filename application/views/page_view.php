@@ -38,7 +38,8 @@
                           echo 'История';
                       else
                           echo 'History'; 
-                ?></a>
+                ?>
+              </a>
           </h2>
         </div>
         <div id="collapseHist" class="panel-collapse collapse">
@@ -56,11 +57,12 @@
         <div class="panel-heading">
           <h2 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseLikes"><i class="fa fa-star"></i>
-                              <?php if(Model::get_lang()==true)
+               <?php if(Model::get_lang()==true)
                           echo 'Избранное';
                       else
                           echo 'Bookmarks'; 
-                ?></a>
+                ?>
+              </a>
           </h2>
         </div>
         <div id="collapseLikes" class="panel-collapse collapse">
@@ -81,7 +83,7 @@
 <!-- <div class="space-for-navbar"></div> -->
 
 <div class="col-md-offset-3 col-md-9 col-xs-12 print-and-likes">
-  <a title="Печать"><i class="fa fa-print"></i></a>
+  <a title="Печать" onclick="window.print();"><i class="fa fa-print"></i></a>
         <?php if(!empty($_COOKIE['bookmarks'])){
         $data = unserialize($_COOKIE['bookmarks']);
         $url=explode('/',$_SERVER['REQUEST_URI']);
@@ -104,4 +106,4 @@
         echo '<a title="Добавить в Избранное" href="/mypages/add"><i class="fa fa-star-o"></i></a>';
     } ?>
 </div>
-<?php echo $content; ?>    
+<?php echo $content; ?>

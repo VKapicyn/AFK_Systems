@@ -1,5 +1,6 @@
-<?php
+<?php 
 session_start();
+
     //если история не пустая, выводим её
     if (isset($_SESSION['history'])) {
         foreach ($_SESSION['history'] as $row){

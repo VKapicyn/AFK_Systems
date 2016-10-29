@@ -32,7 +32,7 @@
     options.path="/";
     var cook=getCookie('kegl');
     if (cook==undefined)
-        setCookie('kegl','12',options);
+        setCookie('kegl',1,options);
     correct_kegl();
     var contr=getCookie('contrast');
     if (contr==undefined)
@@ -48,26 +48,50 @@
     }
     
     function kegl_plus(){
-            var options="";
-            options.path="/";
+        var options="";
+        options.path="/";
         var cook=getCookie('kegl');
-            var newcook=+cook+2;
-            setCookie('kegl',newcook,options);
+        var newcook;
+        if (cook<2)
+            newcook=+cook+1;
+        else
+            newcook=2;
+        setCookie('kegl',newcook,options);
         correct_kegl();
+        //document.getElementById("dec").href="/css/font_inc_1.5.css";
     }
     function kegl_minus(){
         var options="";
         options.path="/";
         var cook=getCookie('kegl');
-            var newcook=cook-2;
-            setCookie('kegl',newcook,options);
+        var newcook;
+        if (cook>0)
+            newcook=+cook-1;
+        else
+            newcook=0;
+        setCookie('kegl',newcook,options);
         correct_kegl();
+        //document.getElementById("dec").href="/css/font_dec_1.5.css";
     }
-    
+
     function correct_kegl(){
-        var kegl=getCookie('kegl');
-        console.log(kegl);
-        //изменение стиля чере jQuery
+        var cook=getCookie('kegl');
+        if (cook=='0')
+        {document.getElementById("dec").href="/css/font_dec_1.5.css";
+         document.getElementById("dec_less").href="/css/font_dec_1.5.less";
+         document.getElementById("dec_less").rel="stylesheet/less";
+        }
+        if (cook=='2')
+        {document.getElementById("dec").href="/css/font_inc_1.5.css";
+         document.getElementById("dec_less").href="/css/font_inc_1.5.less";
+         document.getElementById("dec_less").rel="stylesheet/less";
+        }
+        if (cook=='1')
+        {document.getElementById("dec").href="";
+         document.getElementById("dec_less").href="";
+         document.getElementById("dec_less").rel="";
+        }
+        console.log(cook);
     }
 
     function contrast(){

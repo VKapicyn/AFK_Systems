@@ -104,7 +104,7 @@ var VALUES = Array();
 							var options;
 							var chartType = 'spline';
 							$(function () {
-                                console.log('tttt');
+                                
 									options ={
 									title: {
 										text: 'Интерактивная аналитика'

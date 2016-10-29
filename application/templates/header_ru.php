@@ -1,15 +1,13 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-            <?php
-            if(!empty($title)){
+
+            <?php if(!empty($title)){
                  echo '<title>'.$title.'</title>';
             }
             else
-                echo '<title>АФК Система</title>';
-        ?>
+                echo '<title>АФК Система</title>'; ?>
 <meta name="description" content="Отчет об устойчивом развитии АФК-система 2015">
 <meta name="author" content="">
 
@@ -21,10 +19,11 @@
   <link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="/css/responsive.css">
   <link href="/css/styles.css" rel="stylesheet">
- 
+  <link id="dec" href="" rel="stylesheet">
 
   <!--LESS-->
   <link rel="stylesheet/less" href="/css/styles.less"> <!--сначала стиль-->
+  <link id="dec_less" rel="" href="">
   <script src="/js/less.js"></script> <!--потом скрипт-->
   <script>less = { env: 'development' };</script>
   <script>less.watch();</script>
@@ -32,9 +31,14 @@
   <!-- Scripts -->
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  
-    <style>
-    </style>
+  <script src="/js/graphs.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -61,11 +65,10 @@
                       <a href="#">Скачать весь отчет в PDF (14.9 Mb)</a>
                     </li>
                     <li>
-                        <a href="/pdf/page/<?php
-                            $url=explode('/',$_SERVER['REQUEST_URI']);
-                            $ref=$url[3];
-                            echo $ref;
-                            ?>">Скачать текущую страницу в PDF</a>
+                        <?php
+                        $url=explode('/',$_SERVER['REQUEST_URI']);
+                        $ref=$url[3];
+                        echo '<a href="/pdf/page/'.$ref.'">Скачать текущую страницу в PDF</a>'; ?>
                     </li>
                     <li>
                       <a href="/pdf/page/bookmarks">Скачать избранные страницы в PDF</a>
@@ -101,4 +104,4 @@
             </div> <!-- /.navbar-collapse -->
         </div>        <!-- /.container -->
     </nav>
- </div>   <!--container navigation-->
+</div>
