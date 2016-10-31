@@ -94,21 +94,31 @@
         console.log(cook);
     }
 
-    function contrast(){
+    function correct_contrast(){
         var options="";
         options.path="/";
         var constr=getCookie('contrast');
         if(constr=='0'){
             console.log('по умолчанию');
-            setCookie('contrast','1',options);
+            document.getElementById("contrast").href="";
         }
         if(constr=='1'){
             console.log('контрастный');
-            setCookie('contrast','0',options);
+            document.getElementById("contrast").href="/css/contrast.css";
         }
     }
 
-    function correct_contrast(){
-        console.log(getCookie('contrast'));
-        //изменение стиля чере jQuery
+    function contrast(){
+                var options="";
+        options.path="/";
+        var constr=getCookie('contrast');
+        if(constr=='0'){
+            setCookie('contrast','1',options);
+            
+        }
+        if(constr=='1'){
+            setCookie('contrast','0',options);
+            
+        }
+        correct_contrast();
     }

@@ -1,4 +1,4 @@
-/* Fonts */
+ /* Fonts */
 @font-face {
     font-family: "WhitneyBook";
     src: url("/fonts/fonts/WhitneyBook/WhitneyBook.eot");
@@ -23,8 +23,8 @@ body {
   background-color: @bgColor;
   color: black;
   font-family: 'WhitneyBook','WhitneyLight','Helvetica','Arial', sans-serif;
+  overflow-x: hidden !important; //от белой полосы
 }
-
 
 /* Variables */
 @bgColor: #fff;
@@ -61,17 +61,6 @@ body {
   }
  
 }
-// .download{
-//   padding-top: 20px;
-// }
-
-// .download a {
-//   color: @white;
-//   text-decoration: underline;
-// }
-// .download a:hover {
-//   color: @orange;
-// }
 
 .search-query {
   padding-left: 10px;
@@ -351,6 +340,7 @@ article {
 
   .intro {
     color: @articleIntro;
+    // text-align: justify;
   }
 
   .portrait-quote {
@@ -382,7 +372,6 @@ article {
     background-color: @articleIntro;
     width: 60px;
     padding-left: 5px;  
-    // margin-bottom: 5px;  
     margin: 5px 0;
   }
 
@@ -397,10 +386,6 @@ article {
         }
   }
 
-
-
-
-
   img {
     text-align: center;
   }
@@ -410,64 +395,6 @@ article {
     color: @blue;
     padding: 5px;
   } 
-
-
-/* business-model p 28 Бизнес-модель */
-// .bm-container {
-//   overflow: hidden;
-//   width: 600px;
-// }
-// .business-model {
-//   white-space: nowrap;
-//   background-image: url(/img/1.1/bg-rect.png);
-//   background-repeat: no-repeat;
-  
-//   .space {
-//   margin-top: 20px;
-// }
-
-//   .rect {
-//     display:inline-block;
-//     margin: 10px;   
-//     width: 200px;
-//     height: 75px;
-//     padding: 10px;
-//     position: relative; 
-//     text-overflow: clip;
-
-//     p {
-//       color: @white;
-//       text-transform: uppercase;
-//       text-align: center;
-//       text-overflow: clip;
-//      }
-// } /* /rect */ 
-
-//     /* фон прямоугольников */
-//     .orange-bg { background-color: @orange; }
-//     .blue-bg { background-color: @blue; }
-//     .red-bg { background-color: @red; }
-//     .green-bg { background-color: @green; }
-//     /* смена цвета фона при наведении */
-//     .orange-bg:hover { background-color: lighten(@orange, 10%); }
-//     .blue-bg:hover { background-color: lighten(@blue, 10%); }
-//     .green-bg:hover { background-color: lighten(@green, 10%); }
-//     .red-bg:hover { background-color: lighten(@red, 10%); }    
-
-//     /* всплывающая подсказка */
-//     .rect:hover::after { 
-//     content: attr(data-title); 
-//     position: absolute; 
-//     left: 40%; top: 30%; /* Положение подсказки */
-//     z-index: 1; 
-//     background: darken(@bgColor, 10%); 
-//     font-size: 11px; 
-//     padding: 5px 10px; 
-//     border: 1px solid #ccc; 
-//     cursor: pointer;
-//     }
-//  } 
- /* /business-model*/  
  
  .number-and-icon { //1.2 p.38
   span {
@@ -485,6 +412,66 @@ article {
   }
 }
 
+/* 1.8. Взаимодействие с заинтересованными сторонами */
+.stakeholder {
+  p {
+    text-align: justify;
+  }
+  li {
+    list-style-type: none; /* Прячем исходные маркеры */
+    padding-left: 0;
+   }
+
+// .short-1st-word {
+//   img {
+//     padding-left: 50px;
+//   }   
+// }
+.short-1st-word img {
+    margin-left: 50px;  
+}
+
+.orange-span { //не работает o_O
+  ul {
+    li {
+      list-style-type: none;
+      span {
+        color: @orange;
+      }
+    }
+  }
+ }
+
+  
+}
+
+.case {
+
+  p {
+    // background-color: @gray;
+    // float: left;
+    text-align: justify;
+  }
+  img {
+    float: right;
+  }
+
+
+} /*  /stakeholder*/
+/* /1.8. Взаимодействие с заинтересованными сторонами */
+
+
+  .float-left {
+    float: left;
+  }  
+
+  .float-right {
+    float: right;
+  }
+  .img-in-text {
+    width: 230px;
+    margin-left: 10px;
+  }
 
 
   } /* /article */
@@ -542,6 +529,26 @@ article {
 }
 /* /accordeon */
 
+/* 2.1. */
+#accordion21 {
+  .portrait-quote {
+    img {
+      width: 280px;
+    }
+  }
+
+  .rez {
+    color: @gray;
+    font-size: 12px;
+    span {
+      font-size: 25px;
+    }
+    
+  }
+}
+/* /2.1. */
+
+
 .table {
   border-top: 1px solid @black;
   tr {
@@ -582,7 +589,7 @@ article {
 /* Приложения */
 .small-font {
   font-size: 10px;
-  color: gray;
+  color: @gray;
   margin: 10px 0;
 }
 
@@ -675,6 +682,7 @@ table {
         height: 100px;
         width: 100%;
         margin-bottom: 20px;
+        margin-top: 20px;
         padding: 20px;
         box-sizing:border-box;
         -moz-box-sizing:border-box;
@@ -702,18 +710,54 @@ table {
            }
 
     }
-            
-    .carousel-control {
-        // top: 33%;
-    }
+
+
+
+     .control-box { //стрелочки в слайдере
+       .left {
+         background-image: url(/img/honors/CircledChevronLeft.png);
+         background-position: 20px 45px;
+         background-repeat: no-repeat;
+       }
+
+      .right {
+         background-image: url(/img/honors/CircledChevronRight.png);
+         background-position: 50px 45px;
+         background-repeat: no-repeat;         
+     }
+
+   } /* /control-box */
+   
+   @media(max-width:768px) {
+     .control-box { //стрелочки в слайдере на мелких экранах
+       .left {
+         background-image: url(/img/honors/CircledChevronLeft.png);
+         background-repeat: no-repeat;
+         background-position: 15px 50px;
+         // background-position: 60% 3.5%;
+         background-size: 30px;
+       }
+
+      .right {
+         background-image: url(/img/honors/CircledChevronRight.png);
+         background-repeat: no-repeat;         
+         background-position: -1px 50px;
+         // background-position: 5% 3.5%;
+         background-size: 30px;
+     }
+
+   } /* /control-box */
+
+}
+
+
 }/* /.honors_slider */
 /* /Награды и достижения */
 
 
 /* Главная страница */
 
-.mainpage {
-   
+.mainpage { 
     margin: 0 auto;
     background: url(/img/mainpage/background.png) no-repeat top center;
     background-size: cover;
@@ -757,8 +801,7 @@ table {
         a {
           margin-right: 20px;
         }
-        
-        // margin: 10px;
+
         .btn {
           padding: 8px;
           margin-top: 10px;
@@ -813,6 +856,10 @@ table {
     .cd-horizontal-timeline .events-content li.leave-left {
       animation-direction: reverse;
     }
+
+
+
+
     @keyframes cd-enter-right {
       0% {
         opacity: 0;
@@ -833,6 +880,17 @@ table {
         transform: translateX(0%);
       }
     }
+
+
+.cd-horizontal-timeline {
+     .events-content p {
+    // color: #fff !important;
+    color: @black;
+   }
+}
+
+
+
 /* /Ключевые события */
 
 /* /Спецстраницы */
@@ -860,7 +918,6 @@ footer {
 
     
 i.fa { /*иконки в контактах*/
-    // margin-right: 10px;
     color: @black;
   }
 
@@ -905,8 +962,3 @@ i.fa { /*иконки в контактах*/
 
 
 }  /* /footer */
- 
-
-
-
-  

@@ -20,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="/css/responsive.css">
   <link href="/css/styles.css" rel="stylesheet">
   <link id="dec" href="" rel="stylesheet">
+  <link id="contrast" href="" rel="stylesheet">
 
   <!--LESS-->
   <link rel="stylesheet/less" href="/css/styles.less"> <!--сначала стиль-->
@@ -90,7 +91,7 @@
                         <a href="/lang/choose/en"><i class="icons en"></i>EN</a>
                     </li>
                     <li>
-                        <a href="#"><i class="icons fa fa-sitemap"></i></a>
+                        <a href="/page/id/1"><i class="icons fa fa-sitemap"></i></a>
                     </li>
                     <li>
 
